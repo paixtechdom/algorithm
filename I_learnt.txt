@@ -1,0 +1,27 @@
+22-06-2024
+
+1. I learnt how to reverse an array using two logics
+
+a. I developed the first one myself using for loop
+    create a new array
+    loop through the array to be reversed (using the variable i for this doc)
+    set the i of the new array to be  arrayToBeReversed[ arrayToBeReversed.length - 1 - i ] 
+        - 1 because array indexing starts from 0
+        - i so it keeps reducing as te value of i increases
+
+
+b. I then gave to chatGpt who gave me another method using array destructuring and while loop
+
+
+2.  I also learnt array destrucutring and array swapping
+
+      let a = ["ab", "cd", "ef", "gh"]
+      let b = ["zx", "sf", "ff"]
+      const c = a
+      a = b
+      b = c
+      console.log(a)
+
+      // const [z, y, x, w] = a
+      // console.log(z)
+
