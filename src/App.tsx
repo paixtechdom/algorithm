@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { MultiplicationTable } from "./Problems/MultiplicationTable"
-import { PrintEvenNumber, sumNumbersInTheArray, sumNumbersAcrossArray, reverseArray, reverseString, SortArrayAsc } from "./Problems/functions"
+import { PrintEvenNumber, sumNumbersInTheArray, sumNumbersAcrossArray, reverseArray, reverseString, SortArrayAsc, CalcAverage, FactorialCalc, isPalindrome, FindLongestWord } from "./Problems/functions"
 
 function App() {
   const arrayOne = [0, 40, 55, 53, -3, 0.6]
@@ -13,8 +13,11 @@ function App() {
       // console.log(sumNumbersAcrossArray(arrayTwo, 1))
       // console.log(reverseArray(arrayThree))
       // console.log(reverseString(stringOne))
-
-    console.log(SortArrayAsc(arrayOne))
+      // console.log(CalcAverage(arrayOne))
+    // console.log(SortArrayAsc(arrayOne))
+    // console.log(FactorialCalc(7))
+    // console.log(isPalindrome('racecar'))
+    console.log(FindLongestWord('This is a website developm course'))
       
   }, [])
   

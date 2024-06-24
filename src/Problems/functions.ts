@@ -1,3 +1,14 @@
+export const CalcAverage = (arr: number[]) :number => {
+  let average = 0
+  for (let i = 0; i < arr.length; i++) {
+        average += arr[i]
+  }
+  return average/arr.length
+}
+
+
+
+
 // . *********Function to print even numbers from 0 to the given number********
 
 export const PrintEvenNumber = (n: number) : void => {
@@ -70,64 +81,93 @@ export const reverseArray = (n : any[]) => {
   2. reverse array
   3. convert to string
 */
-export const reverseString = (n: string) => {
-  // using built in functions
-  // return n.split('').reverse().join(``)
+export const reverseString = (arr: string) :string => {
+  // return arr.split(" ").reverse().join(" ")
+  let arrayFromString = []
+  let reversedString = ""
 
-
-
-
-  // using loops
-    let arrayFromString = []
-    let reversedString = ""
-
-    // convert string to array
-  for (let i = 0; i < n.length; i++) {
-        arrayFromString[i] = n[i]
+  for (let i = 0; i < arr.length; i++) {
+    arrayFromString[i] = arr[i]
   }
 
-    // reverse array
-    let right = arrayFromString.length - 1
-    let left = 0
-    while(left < right){
-      [arrayFromString[left], arrayFromString[right]] = [arrayFromString[right], arrayFromString[left]]
+  let left = 0
+  let right = arr.length - 1
 
-      left++
-      right--
-    }
+  while (left < right){
+    [arrayFromString[left], arrayFromString[right]] = [arrayFromString[right], arrayFromString[left]]
 
+    left++
+    right--
+  }
 
-  // convert to string
   for (let i = 0; i < arrayFromString.length; i++) {
-    reversedString += arrayFromString[i]
+        reversedString += arrayFromString[i]
   }
+
   return reversedString
 }
+
 
 
 /* 
   1. loop through
   2. if the first is greater than the next set that as the first if not as last
 */
-export const SortArrayAsc= (n: any) => {
-  // using built in function
-  // return n.sort()
 
+export const SortArrayAsc = (arr :any[]):any[] => {
+  // const sortedArray:any[] = []
+  let n = arr.length
+  let swapped;
 
-  // bubble sort
-  let no = n.length
-  let sawpped;
-
-  do{
-    sawpped = false 
-    for(let i = 1; i < no; i++){
-      if(n[i - 1] >  n[i]){
-        [n[i-1], n[i]] = [n[i], n[i-1]]
-        sawpped = true
+  do {
+    swapped = false
+    for (let i = 0; i < arr.length; i++) {
+      if(arr[i] > arr[i+1]){
+        [arr[i], arr[i+1]] = [arr[i+1], arr[i]]
+        swapped = true
       }
+      n--
     }
-    no--
-  }  while(sawpped)
+
     
-    return n
+  } while (swapped);
+
+  return arr
+}
+
+
+export const FactorialCalc = (num: number):number => {
+  let factorial = 1
+
+  for (let i = 0; i < num; i++) {
+    factorial += factorial*i
+  }
+
+  return factorial
+}
+
+
+export const isPalindrome = (str: string):boolean => {
+  // return str.split('').reverse().join("") === str
+  return reverseString(str) == str
+
+  // should know if spaces count
+}
+
+
+export const FindLongestWord = (str: string):string | string[] | undefined => {
+  let longestWord;
+  let arrayFromString = str.split(" ")
+  let n = 0;
+  // using inbuilt
+
+  
+  for (let i = 0; i < arrayFromString.length; i++) {
+      if(arrayFromString[i].length > n){
+        n = arrayFromString[i].length
+        longestWord = arrayFromString[i]
+      }
+  }
+
+  return longestWord
 }
