@@ -43,7 +43,7 @@ export const sumNumbersAcrossArray= (n: number[][], index: number): number => {
 
 
 // let the one with index 0 become the last index and the one with index last becomd first, let the one with second index become last index -1 the one with last index -1 becomes first index +1
-export const reverseArray = (n : any[]) => { 
+export const reverseArray = (n : any[]): any[] => { 
   // using in built functions
   
   // return n.reverse()
@@ -107,15 +107,12 @@ export const reverseString = (arr: string) :string => {
   return reversedString
 }
 
-
-
 /* 
   1. loop through
   2. if the first is greater than the next set that as the first if not as last
 */
 
 export const SortArrayAsc = (arr :any[]):any[] => {
-  // const sortedArray:any[] = []
   let n = arr.length
   let swapped;
 
@@ -136,6 +133,7 @@ export const SortArrayAsc = (arr :any[]):any[] => {
 }
 
 
+
 export const FactorialCalc = (num: number):number => {
   let factorial = 1
 
@@ -146,7 +144,6 @@ export const FactorialCalc = (num: number):number => {
   return factorial
 }
 
-
 export const isPalindrome = (str: string):boolean => {
   // return str.split('').reverse().join("") === str
   return reverseString(str) == str
@@ -154,9 +151,9 @@ export const isPalindrome = (str: string):boolean => {
   // should know if spaces count
 }
 
-
 export const FindLongestWord = (str: string):string | string[] | undefined => {
-  let longestWord;
+  // this returns the first longest word in a senence if there are two of the same length
+  let longestWord = "";
   let arrayFromString = str.split(" ")
   let n = 0;
   // using inbuilt
@@ -170,4 +167,68 @@ export const FindLongestWord = (str: string):string | string[] | undefined => {
   }
 
   return longestWord
+}
+
+export const CountVowel = (str:string):number => {
+  const vowels = "AaEeIiOoUu"
+  let noVowels = 0
+  for (let i = 0; i < str.length; i++) {
+      // indexOf() returns  -1 if not in the array or string
+      if(vowels.indexOf(str[i]) !== -1){
+        noVowels += 1
+      }     
+     
+  }
+
+  return noVowels
+}
+
+export const RemoveNegativeNums = (num: number[]): number[] => {
+  // both not working for 0
+  return num.filter(n => n/0 !== -Infinity && n)
+  return num.filter(n => n >= 0 && n)
+}
+
+export const RemoveSpaces = (str: string):string =>{
+  // in-built function
+  // return str.split(' ').join('')
+
+
+  let trimmedString = ""
+
+  for (let i = 0; i < str.length; i++) {
+    if(str[i] !== ' '){
+      trimmedString += str[i]
+    }
+  }
+  return trimmedString
+}
+
+
+
+
+export const FindMaxNum = (arr :number[]):number | number[] => {
+  // put max first then sort array asc
+  let newArray = []
+  let n = arr.length
+  let swapped;
+
+  do {
+    swapped = false
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] > arr[i+1]) {
+        [arr[i], arr[i+1]] = [arr[i+1], arr[i]]
+        swapped = true
+      }
+      n--
+    }
+
+
+  } while (swapped);
+  
+  newArray = arr
+  newArray.unshift(arr[arr.length-1])
+  newArray.pop()
+
+  return newArray
 }
