@@ -1,12 +1,14 @@
 import { useEffect } from "react"
 import { MultiplicationTable } from "./Problems/MultiplicationTable"
-import { PrintEvenNumber, sumNumbersInTheArray, sumNumbersAcrossArray, reverseArray, reverseString, SortArrayAsc, CalcAverage, FactorialCalc, isPalindrome, FindLongestWord, CountVowel, RemoveNegativeNums, RemoveSpaces, FindMaxNum } from "./Problems/functions"
+import { PrintEvenNumber, sumNumbersInTheArray, sumNumbersAcrossArray, reverseArray, reverseString, SortArrayAsc, CalcAverage, FactorialCalc, isPalindrome, FindLongestWord, CountVowel, RemoveNegativeNums, RemoveSpaces, FindMaxNum, CapitalizeFirst, GenerateFabonacci, IsPrime, RemoveDuplicates } from "./Problems/functions"
 
 function App() {
   const arrayOne = [0, 10, 40, 55, 53, -3, -0.6]
   const arrayTwo = [[0, 1], [3, 4], [5, 4]]
   const arrayThree = ["a", 'b','c', "d", "ddd", "ddd"]
+  const arrayFour = [1, 2, 3, 4, 5, 6, 2, 3, 4]
   const stringOne = "ade goes to school"
+  const stringTwo = "Hello world"
   useEffect(() => {
     // PrintEvenNumber(56)
     // console.log(sumNumbersInTheArray(arrayOne))
@@ -21,7 +23,12 @@ function App() {
     // console.log(CountVowel(stringOne))
     // console.log(RemoveNegativeNums(arrayOne))
     // console.log(RemoveSpaces(stringOne))
-    console.log(FindMaxNum(arrayOne))
+    // console.log(FindMaxNum(arrayOne))
+    // console.log(CapitalizeFirst(stringTwo))
+    // console.log(GenerateFabonacci(10))
+    // console.log(IsPrime(117))
+    console.log(RemoveDuplicates(arrayFour))
+
   }, [])
   
 

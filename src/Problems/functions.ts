@@ -204,9 +204,6 @@ export const RemoveSpaces = (str: string):string =>{
   return trimmedString
 }
 
-
-
-
 export const FindMaxNum = (arr :number[]):number | number[] => {
   // put max first then sort array asc
   let newArray = []
@@ -232,3 +229,57 @@ export const FindMaxNum = (arr :number[]):number | number[] => {
 
   return newArray
 }
+
+/* 
+  1. convert the string into array
+  2. loop through the array and convert it to array
+  3. loop through it and convert the first letter to uppercase
+  convert to string
+*/
+
+export const CapitalizeFirst = (str: string) :string => {
+  let capitalizedString = "" 
+  str.split(' ').map(
+    s => {s.split('').map(
+      (a, i) => capitalizedString += 
+          (i == 0 ? a.toUpperCase() : a + (i == s.length-1 ? ' ': ''))
+        )
+
+
+  })
+
+  return capitalizedString
+}
+
+export const GenerateFabonacci = (num: number) :number[] => {
+  let series:number[] = [0, 1]
+
+  for (let i = 2; i < num; i++) {
+      series[i] = series[i-1] + series[i-2]
+  }
+
+  return series
+}
+
+export const IsPrime = (num: number) :boolean => {
+  let divisionOccurence = 0
+  for (let i = 1; i < (num < 100 ? 100 : num < 1000 ? 1000 : 10000); i++) {
+    if(num%i == 0){
+      divisionOccurence += 1
+    }
+  }
+
+  return divisionOccurence == 2
+}
+
+export const RemoveDuplicates = (arr :string[] | number[]) :string[] | number[] =>{
+  let n = arr.length
+  let checked;
+  
+  do {
+    
+  } while (checked);
+  
+  return arr
+}
+
