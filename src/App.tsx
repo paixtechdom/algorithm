@@ -1,9 +1,9 @@
 import { useEffect } from "react"
 import { MultiplicationTable } from "./Problems/MultiplicationTable"
-import { PrintEvenNumber, sumNumbersInTheArray, sumNumbersAcrossArray, reverseArray, reverseString, SortArrayAsc, CalcAverage, FactorialCalc, isPalindrome, FindLongestWord, CountVowel, RemoveNegativeNums, RemoveSpaces, FindMaxNum, CapitalizeFirst, GenerateFabonacci, IsPrime, RemoveDuplicates } from "./Problems/functions"
+import { PrintEvenNumber, sumNumbersInTheArray, sumNumbersAcrossArray, reverseArray, reverseString, SortArrayAsc, CalcAverage, FactorialCalc, isPalindrome, FindLongestWord, CountVowel, RemoveNegativeNums, RemoveSpaces, FindMaxNum, CapitalizeFirst, GenerateFabonacci, IsPrime, RemoveDuplicates, MergeSortedArray } from "./Problems/functions"
 
 function App() {
-  const arrayOne = [0, 10, 40, 55, 53, -3, -0.6]
+  const arrayOne = [0, 10, 4, 5, 14, 53, -3, -0.6]
   const arrayTwo = [[0, 1], [3, 4], [5, 4]]
   const arrayThree = ["a", 'b','c', "d", "ddd", "ddd"]
   const arrayFour = [1, 2, 3, 4, 5, 6, 2, 3, 4, 7, 7]
@@ -27,7 +27,8 @@ function App() {
     // console.log(CapitalizeFirst(stringTwo))
     // console.log(GenerateFabonacci(10))
     // console.log(IsPrime(117))
-    console.log(RemoveDuplicates(arrayFour))
+    // console.log(RemoveDuplicates(arrayFour))
+    console.log(MergeSortedArray(arrayOne, arrayFour))
 
   }, [])
   

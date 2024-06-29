@@ -43,6 +43,7 @@ export const sumNumbersAcrossArray= (n: number[][], index: number): number => {
 
 
 // let the one with index 0 become the last index and the one with index last becomd first, let the one with second index become last index -1 the one with last index -1 becomes first index +1
+
 export const reverseArray = (n : any[]): any[] => { 
   // using in built functions
   
@@ -73,8 +74,6 @@ export const reverseArray = (n : any[]): any[] => {
 
   return n
 }
-
-
 
 /* 
   1. convert to array
@@ -131,8 +130,6 @@ export const SortArrayAsc = (arr :any[]):any[] => {
 
   return arr
 }
-
-
 
 export const FactorialCalc = (num: number):number => {
   let factorial = 1
@@ -204,31 +201,50 @@ export const RemoveSpaces = (str: string):string =>{
   return trimmedString
 }
 
-export const FindMaxNum = (arr :number[]):number | number[] => {
-  // put max first then sort array asc
-  let newArray = []
-  let n = arr.length
+// export const FindMaxNum = (arr :number[]):number | number[] => {
+//   // put max first then sort array asc
+//   let newArray = []
+//   let n = arr.length
+//   let swapped;
+
+//   do {
+//     swapped = false
+//     for (let i = 0; i < arr.length; i++) {
+//       if (arr[i] > arr[i+1]) {
+//         [arr[i], arr[i+1]] = [arr[i+1], arr[i]]
+//         swapped = true
+//       }
+//       n--
+//     }
+
+
+//   } while (swapped);
+  
+//   newArray = arr
+//   newArray.unshift(arr[arr.length-1])
+//   newArray.pop()
+
+//   return newArray
+// }
+
+export const FindMaxNum = (arr : number[]): number=> {
+  let n = arr.length 
   let swapped;
 
   do {
     swapped = false
     for (let i = 0; i < arr.length; i++) {
-      if (arr[i] > arr[i+1]) {
+      if(arr[i] < arr[i+1]){
         [arr[i], arr[i+1]] = [arr[i+1], arr[i]]
         swapped = true
       }
-      n--
-    }
-
-
+      n-- 
+    } 
   } while (swapped);
-  
-  newArray = arr
-  newArray.unshift(arr[arr.length-1])
-  newArray.pop()
 
-  return newArray
+  return arr[0]
 }
+
 
 /* 
   1. convert the string into array
@@ -273,16 +289,10 @@ export const IsPrime = (num: number) :boolean => {
 }
 
 /*
-  1. check if a occurs more than once
-
-  push to a new array upon the first instance of a whatever
-
-  check new array if it conatins n, if not push to it
+    check new array if it conatins n, if not push to it
   run this arr.length times
 
 */
-
-
 export const RemoveDuplicates = (arr :any[]) :any[] =>{
   let newArray: any[] = []
   let n = arr.length
@@ -298,3 +308,25 @@ export const RemoveDuplicates = (arr :any[]) :any[] =>{
   return newArray
 }
 
+export const MergeSortedArray = (arr1 : any[], arr2:any[]):any[] =>{
+  return SortArrayAsc(arr1.concat(arr2))
+  let arrays = arr1.concat(arr2)
+  let n = arrays.length
+  let swapped
+
+  do {
+    swapped = false
+    for (let i = 0; i < arrays.length; i++) {
+        if(arrays[i] > arrays[i+1]){
+          [arrays[i], arrays[i+1]] = [arrays[i+1], arrays[i]]
+          swapped = true
+        }
+      
+      n--
+    }
+  } while (swapped);
+
+
+
+  return arrays
+}
