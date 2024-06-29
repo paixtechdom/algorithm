@@ -272,14 +272,29 @@ export const IsPrime = (num: number) :boolean => {
   return divisionOccurence == 2
 }
 
-export const RemoveDuplicates = (arr :string[] | number[]) :string[] | number[] =>{
+/*
+  1. check if a occurs more than once
+
+  push to a new array upon the first instance of a whatever
+
+  check new array if it conatins n, if not push to it
+  run this arr.length times
+
+*/
+
+
+export const RemoveDuplicates = (arr :any[]) :any[] =>{
+  let newArray: any[] = []
   let n = arr.length
-  let checked;
+
+  for (let i = 0; i < n; i++) {
+    if (newArray.indexOf(arr[i]) == -1) {
+      newArray = [...newArray, arr[i]]
+    }
+  }
+
   
-  do {
-    
-  } while (checked);
   
-  return arr
+  return newArray
 }
 

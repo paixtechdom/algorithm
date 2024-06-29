@@ -6,7 +6,7 @@ function App() {
   const arrayOne = [0, 10, 40, 55, 53, -3, -0.6]
   const arrayTwo = [[0, 1], [3, 4], [5, 4]]
   const arrayThree = ["a", 'b','c', "d", "ddd", "ddd"]
-  const arrayFour = [1, 2, 3, 4, 5, 6, 2, 3, 4]
+  const arrayFour = [1, 2, 3, 4, 5, 6, 2, 3, 4, 7, 7]
   const stringOne = "ade goes to school"
   const stringTwo = "Hello world"
   useEffect(() => {
